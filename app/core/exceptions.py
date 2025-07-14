@@ -38,7 +38,13 @@ class UnprocessableEntityException(AppBaseException):
     def __init__(self, detail="Unprocessable entity"):
         super().__init__(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, error_code="UNPROCESSABLE_ENTITY", detail=detail)
 
-
+class NotModifiedException(AppBaseException):
+    def __init__(self, detail="Resource not modified"):
+        super().__init__(
+            status_code=status.HTTP_304_NOT_MODIFIED,
+            error_code="NOT_MODIFIED",
+            detail=detail
+        )
 
 
 class DatabaseConnectionException(AppBaseException):

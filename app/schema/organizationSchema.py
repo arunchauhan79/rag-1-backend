@@ -14,6 +14,11 @@ class OrgCreate(OrgBase):
     password:Annotated[str,Field(...,min_length=4, max_length=16, description="Organization password, with that organization will be able to login.")]
     
     
+class OrgUpdate(BaseModel):
+    id:Annotated[str,Field(alias="id", description="Unique id of the organization")]  
+    name:Annotated[str, Field(...,max_length=100,description="Name of the organization")]
+        
+    
     
 class OrgModel(OrgBase):    
     createAt:datetime

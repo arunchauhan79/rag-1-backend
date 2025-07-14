@@ -21,7 +21,6 @@ def get_database():
     if _client is None:
         try:
             _client = AsyncMongoClient(settings.mongodb_uri)
-            _client.admin.command('ping')
            
             print("MongoDB connection successful!")
             return _client[DATABASE_NAME]
@@ -30,12 +29,10 @@ def get_database():
             _client = None # Reset client if connection fails
             raise DatabaseConnectionException(f"MongoDB connection failed")
         except Exception as e:
-            print(f"An unexpected error occurred during connection: {e}")
             _client = None
             raise DatabaseConnectionException(f"An unexpected error occurred during connection")
     else:
         # If client already exists, just return the database
-        print("Database object",_client[DATABASE_NAME])
         return _client[DATABASE_NAME]
 
 async def close_db_connection():
