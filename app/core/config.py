@@ -8,7 +8,8 @@ class Settings(BaseSettings):
     mongodb_uri: str = Field(..., env="MONGODB_URI")
     jwt_secret: str = Field(..., env="JWT_SECRET")
     algorithm: Literal["HS256"] = "HS256"
-    token_expire_minutes: int = 1440  
+    token_expire_minutes: int = 1440
+    log_level:str ="INFO"  
 
     class Config:
         env_file = ".env"

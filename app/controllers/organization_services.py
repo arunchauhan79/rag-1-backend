@@ -7,21 +7,22 @@ from pymongo.errors import PyMongoError
 from pymongo.asynchronous.database import AsyncDatabase
 from bson import ObjectId
 from core import UserAlreadyExistsException, DatabaseConnectionException,DatabaseQueryException,NotFoundException,hash_password
-import logging
-
-logger = logging.getLogger(__name__)
+from core import logger
 
 
 async def createOrg(org_data: OrgCreate, db:AsyncDatabase) -> str:
     try:
         if db is None:
+            logger.info("Database not connected")
             raise DatabaseConnectionException(f"Database not connected")
 
         # Check for existing username/email
         if await db.organizations.find_one({"username": org_data.username}):
+            logger.info("Organization is already exists")
             raise UserAlreadyExistsException(f"Organization with username '{org_data.username}' already exists")
 
         if await db.organizations.find_one({"email": org_data.email}):
+            logger.info("Organization is already exists")
             raise UserAlreadyExistsException(f"Organization with email '{org_data.email}' already exists")
 
         # Build OrgModel and convert to dict
@@ -38,6 +39,8 @@ async def createOrg(org_data: OrgCreate, db:AsyncDatabase) -> str:
         if not org_result.inserted_id:
             raise DatabaseQueryException(f"Failed to create organization")
 
+
+        logger.info(f"Organization inserted with id {org_result.inserted_id}")
         hashed_pwd = hash_password(org_data.password)
         user_document = UserModel(
             firstname=org_data.name,
@@ -49,15 +52,17 @@ async def createOrg(org_data: OrgCreate, db:AsyncDatabase) -> str:
             role="admin",
             createdAt=datetime.now(timezone.utc)
         ).model_dump()
+        logger.info(f"Organization inserted as user in User collection with orgId {org_result.inserted_id}")
+        
         result = await db.users.insert_one(user_document)
         
         return str(org_result.inserted_id)
 
     except PyMongoError:
-        logger.exception("Database error while creating organization")
+        logger.info("Database error while creating organization")
         raise DatabaseConnectionException(f"Database error")
     except Exception as e:
-        logger.exception("Unexpected error while creating organization")
+        logger.info("Unexpected error while creating organization")
         raise DatabaseConnectionException(f"Internal server error")
 
 
