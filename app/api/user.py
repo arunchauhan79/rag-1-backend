@@ -35,11 +35,11 @@ async def get_users_by_OrgId(orgId:str, db: AsyncDatabase = Depends(get_database
 
 @router.get('/user/{userId}', response_model=StandardResponse)
 async def get_user_by_id(userId:str, db: AsyncDatabase = Depends(get_database)):
-    org = await getUserById(userId, db)
+    user = await getUserById(userId, db)
     return StandardResponse(
         status="success",
         message="User retrieved successfully",
-        data=org
+        data=user
     )
     
 @router.put('/{userId}', response_model=StandardResponse)

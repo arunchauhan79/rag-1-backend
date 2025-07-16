@@ -12,7 +12,7 @@ router = APIRouter()
 
 @router.post('/', response_model=StandardResponse,status_code=status.HTTP_201_CREATED)
 async def create_org(org:OrgCreate, db:AsyncDatabase = Depends(get_database)):    
-    org_id = await createOrg(org,  db)
+    data = await createOrg(org,  db)
     # return JSONResponse(
     #     status_code=status.HTTP_201_CREATED,
     #     content={
@@ -25,7 +25,7 @@ async def create_org(org:OrgCreate, db:AsyncDatabase = Depends(get_database)):
     return StandardResponse(
         status="success",
         message="Organization created successfully",
-        data={"id": str(org_id)}
+        data=data
       )
 
 

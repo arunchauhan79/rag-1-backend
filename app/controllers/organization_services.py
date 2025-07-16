@@ -1,13 +1,13 @@
 from typing import List
 from schema import OrgOutput, OrgCreate, OrgModel, OrgUpdate, UserModel
-from datetime import datetime, timezone
+from .user_services import getUserById
+from datetime import datetime, timezone, timedelta
 from db.client import get_database
 from fastapi import HTTPException, status, Depends
 from pymongo.errors import PyMongoError
 from pymongo.asynchronous.database import AsyncDatabase
 from bson import ObjectId
-from core import UserAlreadyExistsException, DatabaseConnectionException,DatabaseQueryException,NotFoundException,hash_password
-from core import logger
+from core import UserAlreadyExistsException, DatabaseConnectionException,DatabaseQueryException,NotFoundException,hash_password, logger, create_access_token
 
 
 async def createOrg(org_data: OrgCreate, db:AsyncDatabase) -> str:
@@ -56,7 +56,20 @@ async def createOrg(org_data: OrgCreate, db:AsyncDatabase) -> str:
         
         result = await db.users.insert_one(user_document)
         
-        return str(org_result.inserted_id)
+        inserted_user = await getUserById(result.inserted_id, db)
+       
+        payload = {
+            "id": str(inserted_user.id),
+            "organizationId": str(inserted_user.organizationId),
+            "role": inserted_user.role,
+            "exp": datetime.now(timezone.utc) + timedelta(days=1)
+        }
+        token = create_access_token(payload)        
+        
+        return {
+            "user":inserted_user,
+            "token":token
+        }
 
     except PyMongoError:
         logger.info("Database error while creating organization")

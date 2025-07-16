@@ -1,2 +1,194 @@
 2025-07-14 12:47:51,013 - INFO - app - Organization inserted with id 6874af1e993b48a1f16f831f
 2025-07-14 12:47:51,272 - INFO - app - Organization inserted as user in User collection with orgId 6874af1e993b48a1f16f831f
+2025-07-15 11:12:56,496 - INFO - app - Organization inserted with id 6875ea602b7bf8b5037a7196
+2025-07-15 11:12:56,745 - INFO - app - Organization inserted as user in User collection with orgId 6875ea602b7bf8b5037a7196
+2025-07-15 11:14:06,325 - INFO - app - Organization inserted with id 6875eaa62b7bf8b5037a7198
+2025-07-15 11:14:06,555 - INFO - app - Organization inserted as user in User collection with orgId 6875eaa62b7bf8b5037a7198
+2025-07-15 11:14:50,343 - INFO - app - Organization inserted with id 6875ead22b7bf8b5037a719a
+2025-07-15 11:14:50,571 - INFO - app - Organization inserted as user in User collection with orgId 6875ead22b7bf8b5037a719a
+2025-07-15 11:25:08,331 - INFO - app - Organization inserted with id 6875ed3c9a15519151a5555e
+2025-07-15 11:25:08,589 - INFO - app - Organization inserted as user in User collection with orgId 6875ed3c9a15519151a5555e
+2025-07-15 11:26:21,051 - INFO - app - Organization inserted with id 6875ed85e16600098643a4ed
+2025-07-15 11:26:21,328 - INFO - app - Organization inserted as user in User collection with orgId 6875ed85e16600098643a4ed
+2025-07-15 11:26:21,374 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:28:58,996 - INFO - app - Organization inserted with id 6875ee224e8a27c0b78c9183
+2025-07-15 11:28:59,269 - INFO - app - Organization inserted as user in User collection with orgId 6875ee224e8a27c0b78c9183
+2025-07-15 11:28:59,354 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:30:14,110 - INFO - app - Organization is already exists
+2025-07-15 11:30:14,111 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:30:35,142 - INFO - app - Organization inserted with id 6875ee83962e0c5167ac1366
+2025-07-15 11:30:35,384 - INFO - app - Organization inserted as user in User collection with orgId 6875ee83962e0c5167ac1366
+2025-07-15 11:30:35,489 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:31:04,802 - INFO - app - Organization inserted with id 6875eea07a5dac92e5bfcc72
+2025-07-15 11:31:05,078 - INFO - app - Organization inserted as user in User collection with orgId 6875eea07a5dac92e5bfcc72
+2025-07-15 11:37:02,189 - INFO - app - Organization inserted with id 6875f00641d9398e0ee7d349
+2025-07-15 11:37:02,470 - INFO - app - Organization inserted as user in User collection with orgId 6875f00641d9398e0ee7d349
+2025-07-15 11:37:02,556 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:38:03,043 - INFO - app - Organization inserted with id 6875f04350cdc45817c1d285
+2025-07-15 11:38:03,293 - INFO - app - Organization inserted as user in User collection with orgId 6875f04350cdc45817c1d285
+2025-07-15 11:38:03,384 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:39:00,282 - INFO - app - Organization inserted with id 6875f07c977a3ec1e39ebf3b
+2025-07-15 11:39:00,524 - INFO - app - Organization inserted as user in User collection with orgId 6875f07c977a3ec1e39ebf3b
+2025-07-15 11:39:00,600 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:39:28,427 - INFO - app - Organization inserted with id 6875f0989ba556464de822a7
+2025-07-15 11:39:28,713 - INFO - app - Organization inserted as user in User collection with orgId 6875f0989ba556464de822a7
+2025-07-15 11:39:28,827 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:39:58,421 - INFO - app - Organization inserted with id 6875f0b6404155cc1418af72
+2025-07-15 11:39:58,698 - INFO - app - Organization inserted as user in User collection with orgId 6875f0b6404155cc1418af72
+2025-07-15 11:39:58,775 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:40:35,062 - INFO - app - Organization inserted with id 6875f0db2526f1cd483ba8f1
+2025-07-15 11:40:35,419 - INFO - app - Organization inserted as user in User collection with orgId 6875f0db2526f1cd483ba8f1
+2025-07-15 11:42:01,784 - INFO - app - Organization inserted with id 6875f13148d732483be8b294
+2025-07-15 11:42:02,043 - INFO - app - Organization inserted as user in User collection with orgId 6875f13148d732483be8b294
+2025-07-15 11:42:02,157 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:43:17,498 - INFO - app - Organization inserted with id 6875f17d2f7441f717d7e1dc
+2025-07-15 11:43:17,752 - INFO - app - Organization inserted as user in User collection with orgId 6875f17d2f7441f717d7e1dc
+2025-07-15 11:43:17,831 - INFO - app - Unexpected error while creating organization
+2025-07-15 11:43:54,326 - INFO - app - Organization inserted with id 6875f1a2be2ec72d2f6a8d0c
+2025-07-15 11:43:54,610 - INFO - app - Organization inserted as user in User collection with orgId 6875f1a2be2ec72d2f6a8d0c
+2025-07-15 11:46:56,748 - INFO - app - Organization inserted with id 6875f258596fbcbfb1f65b64
+2025-07-15 11:46:57,031 - INFO - app - Organization inserted as user in User collection with orgId 6875f258596fbcbfb1f65b64
+2025-07-15 11:48:09,200 - INFO - app - Organization inserted with id 6875f2a1596fbcbfb1f65b66
+2025-07-15 11:48:09,460 - INFO - app - Organization inserted as user in User collection with orgId 6875f2a1596fbcbfb1f65b66
+2025-07-15 11:49:31,305 - INFO - app - Organization inserted with id 6875f2f3596fbcbfb1f65b68
+2025-07-15 11:49:31,602 - INFO - app - Organization inserted as user in User collection with orgId 6875f2f3596fbcbfb1f65b68
+2025-07-15 11:50:11,158 - INFO - app - Organization inserted with id 6875f31b596fbcbfb1f65b6a
+2025-07-15 11:50:11,427 - INFO - app - Organization inserted as user in User collection with orgId 6875f31b596fbcbfb1f65b6a
+2025-07-15 11:52:22,337 - INFO - app - Organization inserted with id 6875f39e596fbcbfb1f65b6c
+2025-07-15 11:52:22,608 - INFO - app - Organization inserted as user in User collection with orgId 6875f39e596fbcbfb1f65b6c
+2025-07-15 13:37:00,391 - INFO - app - Organization inserted with id 68760c24596fbcbfb1f65b6e
+2025-07-15 13:37:00,851 - INFO - app - Organization inserted as user in User collection with orgId 68760c24596fbcbfb1f65b6e
+2025-07-15 18:28:11,368 - ERROR - app - Failed to fetch Documents by OrganizationId
+Traceback (most recent call last):
+  File "C:\WorkStation\Practice\Python\chatbot_with_python\python-backend\app\controllers\doc_services.py", line 68, in getDocsByOrgId
+    docs.append(DocOutput.model_validate({**doc, "_id": str(doc["_id"])}))
+                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archauhan\AppData\Local\miniconda3\envs\nenv\Lib\site-packages\pydantic\main.py", line 705, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, strict=strict, from_attributes=from_attributes, context=context, by_alias=by_alias, by_name=by_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for DocOutput
+createAt
+  Field required [type=missing, input_value={'_id': '68764e814aada365...764e814aada36518ffd5ef'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+description
+  Field required [type=missing, input_value={'_id': '68764e814aada365...764e814aada36518ffd5ef'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-15 18:28:11,455 - ERROR - app - Failed to fetch Documents by OrganizationId
+Traceback (most recent call last):
+  File "C:\WorkStation\Practice\Python\chatbot_with_python\python-backend\app\controllers\doc_services.py", line 68, in getDocsByOrgId
+    docs.append(DocOutput.model_validate({**doc, "_id": str(doc["_id"])}))
+                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archauhan\AppData\Local\miniconda3\envs\nenv\Lib\site-packages\pydantic\main.py", line 705, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, strict=strict, from_attributes=from_attributes, context=context, by_alias=by_alias, by_name=by_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for DocOutput
+createAt
+  Field required [type=missing, input_value={'_id': '68764e814aada365...764e814aada36518ffd5ef'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+description
+  Field required [type=missing, input_value={'_id': '68764e814aada365...764e814aada36518ffd5ef'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-15 18:29:13,872 - ERROR - app - Failed to fetch Documents by OrganizationId
+Traceback (most recent call last):
+  File "C:\WorkStation\Practice\Python\chatbot_with_python\python-backend\app\controllers\doc_services.py", line 68, in getDocsByOrgId
+    docs.append(DocOutput.model_validate({**doc, "_id": str(doc["_id"])}))
+                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archauhan\AppData\Local\miniconda3\envs\nenv\Lib\site-packages\pydantic\main.py", line 705, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, strict=strict, from_attributes=from_attributes, context=context, by_alias=by_alias, by_name=by_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for DocOutput
+description
+  Field required [type=missing, input_value={'_id': '68764e814aada365...764e814aada36518ffd5ef'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-15 18:29:13,918 - ERROR - app - Failed to fetch Documents by OrganizationId
+Traceback (most recent call last):
+  File "C:\WorkStation\Practice\Python\chatbot_with_python\python-backend\app\controllers\doc_services.py", line 68, in getDocsByOrgId
+    docs.append(DocOutput.model_validate({**doc, "_id": str(doc["_id"])}))
+                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archauhan\AppData\Local\miniconda3\envs\nenv\Lib\site-packages\pydantic\main.py", line 705, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, strict=strict, from_attributes=from_attributes, context=context, by_alias=by_alias, by_name=by_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for DocOutput
+description
+  Field required [type=missing, input_value={'_id': '68764e814aada365...764e814aada36518ffd5ef'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-15 20:30:09,422 - ERROR - app - Failed to fetch Documents by OrganizationId
+Traceback (most recent call last):
+  File "C:\WorkStation\Practice\Python\chatbot_with_python\python-backend\app\controllers\doc_services.py", line 68, in getDocsByOrgId
+    docs.append(DocOutput.model_validate({**doc}))
+                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\archauhan\AppData\Local\miniconda3\envs\nenv\Lib\site-packages\pydantic\main.py", line 705, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, strict=strict, from_attributes=from_attributes, context=context, by_alias=by_alias, by_name=by_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for DocOutput
+_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('68764e814aada36518ffd5ef'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-15 20:30:09,542 - ERROR - app - Failed to fetch Documents by OrganizationId
+Traceback (most recent call last):
+  File "C:\WorkStation\Practice\Python\chatbot_with_python\python-backend\app\controllers\doc_services.py", line 68, in getDocsByOrgId
+    docs.append(DocOutput.model_validate({**doc}))
+                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\archauhan\AppData\Local\miniconda3\envs\nenv\Lib\site-packages\pydantic\main.py", line 705, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, strict=strict, from_attributes=from_attributes, context=context, by_alias=by_alias, by_name=by_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for DocOutput
+_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('68764e814aada36518ffd5ef'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-15 20:30:54,593 - ERROR - app - Failed to fetch Documents by OrganizationId
+Traceback (most recent call last):
+  File "C:\WorkStation\Practice\Python\chatbot_with_python\python-backend\app\controllers\doc_services.py", line 68, in getDocsByOrgId
+    docs.append(DocOutput.model_validate({**doc, "id": str(doc["_id"])}))
+                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archauhan\AppData\Local\miniconda3\envs\nenv\Lib\site-packages\pydantic\main.py", line 705, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, strict=strict, from_attributes=from_attributes, context=context, by_alias=by_alias, by_name=by_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for DocOutput
+_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('68764e814aada36518ffd5ef'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-15 20:30:54,663 - ERROR - app - Failed to fetch Documents by OrganizationId
+Traceback (most recent call last):
+  File "C:\WorkStation\Practice\Python\chatbot_with_python\python-backend\app\controllers\doc_services.py", line 68, in getDocsByOrgId
+    docs.append(DocOutput.model_validate({**doc, "id": str(doc["_id"])}))
+                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\archauhan\AppData\Local\miniconda3\envs\nenv\Lib\site-packages\pydantic\main.py", line 705, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, strict=strict, from_attributes=from_attributes, context=context, by_alias=by_alias, by_name=by_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for DocOutput
+_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('68764e814aada36518ffd5ef'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type

@@ -12,7 +12,8 @@ app = FastAPI()
 
 origins = [
     "http://localhost:3000",         # React dev server
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000",
+    "http://localhost:5173"
 ]
 
 app.add_exception_handler(AppBaseException, app_base_exception_handler)
