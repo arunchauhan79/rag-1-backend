@@ -27,7 +27,6 @@ async def authenticateUser(login: LoginRequest, db: AsyncDatabase) -> dict:
             "exp": datetime.now(timezone.utc) + timedelta(days=1)
         }
         token = create_access_token(payload)
-        print("user",user)
         # Clean user response
         # user.pop("password", None)
 

@@ -31,7 +31,7 @@ async def upload_docs(
     )
     
 
-@router.get('/{orgId}', response_model=StandardResponse)
+@router.get('/{orgId}', response_model=StandardResponse, dependencies=[Depends(require_admin)])
 async def get_org_by_id(orgId:str, db: AsyncDatabase = Depends(get_database)):
     org = await getDocsByOrgId(orgId, db)
     return StandardResponse(

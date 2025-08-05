@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field,EmailStr
-from typing import Annotated, Optional, Literal
+from typing import Annotated, Optional, Literal, List
 from datetime import datetime
 
 class UserBase(BaseModel):
@@ -53,3 +53,29 @@ class UserOutput(UserBase):
 
 class UserModel(UserBase):
     createdAt:datetime
+    
+
+class ChatMessage(BaseModel):
+    role: Literal["user", "ai"]
+    message: str
+    timestamp: datetime = Field(default_factory=datetime)
+
+class ChatHistoryCreate(BaseModel):
+    sessionId: str
+    userId: str
+    orgId: str
+    messages: List[ChatMessage]
+    isActive:Annotated[Optional[Literal[True, False]],Field(default=True,description="Chat is still active or not",
+                                 examples=["True"]
+                                 )]
+
+class ChatHistoryResponse(BaseModel):
+    id:Annotated[str,Field(...,  description="Unique id of chat",
+                                 examples=["usj1kj2n3kj12312-1231k23-123k123er1"]
+                                 )]   
+    sessionId: str
+    userId: str
+    orgId: str
+    messages: List[ChatMessage]
+    createdAt: datetime
+    updatedAt: datetime

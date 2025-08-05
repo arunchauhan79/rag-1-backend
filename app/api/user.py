@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, status
 from fastapi.responses import JSONResponse
-from schema import UserCreate,UserOutput,UserUpdate,StandardResponse
-from controllers import createUser,updateUser,deleteUser, getUsersByOrgId, getUserById
+from schema import UserCreate,UserOutput,UserUpdate,StandardResponse,SearchBase
+from controllers import createUser,updateUser,deleteUser, getUsersByOrgId, getUserById,query_doc
 from typing import Dict
 from db import get_database
 from pymongo.asynchronous.database import AsyncDatabase
@@ -12,7 +12,6 @@ router = APIRouter()
 
 @router.post('/', response_model=StandardResponse,status_code=status.HTTP_201_CREATED,  dependencies=[Depends(require_admin)])
 async def create_user(user:UserCreate, db:AsyncDatabase = Depends(get_database)):    
-    print("In create_user")
     user_id = await createUser(user,  db)
    
     
@@ -24,7 +23,7 @@ async def create_user(user:UserCreate, db:AsyncDatabase = Depends(get_database))
 
 
 
-@router.get('/{orgId}', response_model=StandardResponse)
+@router.get('/{orgId}', response_model=StandardResponse, dependencies=[Depends(require_admin)])
 async def get_users_by_OrgId(orgId:str, db: AsyncDatabase = Depends(get_database)):
     users = await getUsersByOrgId(orgId, db)
     return StandardResponse(
@@ -33,7 +32,7 @@ async def get_users_by_OrgId(orgId:str, db: AsyncDatabase = Depends(get_database
         data=users
     )
 
-@router.get('/user/{userId}', response_model=StandardResponse)
+@router.get('/user/{userId}', response_model=StandardResponse, dependencies=[Depends(require_admin)])
 async def get_user_by_id(userId:str, db: AsyncDatabase = Depends(get_database)):
     user = await getUserById(userId, db)
     return StandardResponse(
@@ -42,7 +41,7 @@ async def get_user_by_id(userId:str, db: AsyncDatabase = Depends(get_database)):
         data=user
     )
     
-@router.put('/{userId}', response_model=StandardResponse)
+@router.put('/{userId}', response_model=StandardResponse, dependencies=[Depends(require_admin)])
 async def update_user(userId:str , user:UserUpdate, db: AsyncDatabase = Depends(get_database)):
     updated_org  = await updateUser(userId, user, db)
     return StandardResponse(
@@ -51,7 +50,7 @@ async def update_user(userId:str , user:UserUpdate, db: AsyncDatabase = Depends(
         data=updated_org
     )
 
-@router.delete('/')
+@router.delete('/',response_model=StandardResponse, dependencies=[Depends(require_admin)])
 async def delete_user(userId:str, db: AsyncDatabase = Depends(get_database)):
     result = await deleteUser(userId, db)
     return StandardResponse(
@@ -59,5 +58,17 @@ async def delete_user(userId:str, db: AsyncDatabase = Depends(get_database)):
         message="User deleted successfully",
         data=None
     )
+    
+@router.post('/query',response_model=StandardResponse)
+async def query(userSearch:SearchBase, db:AsyncDatabase = Depends(get_database)):
+        
+    result = await query_doc(userSearch.searchTxt,userSearch.orgId, db)
+    
+    return StandardResponse(         
+        status="success",
+        message="Data fetched successfully",
+        data=result
+    )
+    
 
 

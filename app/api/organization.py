@@ -6,6 +6,7 @@ from controllers import createOrg, getOrganizations, get_organization_by_id, upd
 from typing import Dict
 from db import get_database
 from pymongo.asynchronous.database import AsyncDatabase
+from dependencies import require_admin
 
 router = APIRouter()
 
@@ -30,7 +31,7 @@ async def create_org(org:OrgCreate, db:AsyncDatabase = Depends(get_database)):
 
 
 
-@router.get('/', response_model=StandardResponse)
+@router.get('/', response_model=StandardResponse, dependencies=[Depends(require_admin)])
 async def get_all_organization(db: AsyncDatabase = Depends(get_database)):
     orgs = await getOrganizations(db)
     return StandardResponse(
@@ -39,7 +40,7 @@ async def get_all_organization(db: AsyncDatabase = Depends(get_database)):
         data=orgs
     )
 
-@router.get('/{orgId}', response_model=StandardResponse)
+@router.get('/{orgId}', response_model=StandardResponse, dependencies=[Depends(require_admin)])
 async def get_org_by_id(orgId:str, db: AsyncDatabase = Depends(get_database)):
     org = await get_organization_by_id(orgId, db)
     return StandardResponse(
@@ -48,7 +49,7 @@ async def get_org_by_id(orgId:str, db: AsyncDatabase = Depends(get_database)):
         data=org
     )
     
-@router.put('/', response_model=StandardResponse)
+@router.put('/', response_model=StandardResponse, dependencies=[Depends(require_admin)])
 async def update_organization(org:OrgUpdate, db: AsyncDatabase = Depends(get_database)):
     updated_org  = await updateOrganization(org, db)
     return StandardResponse(
@@ -57,7 +58,7 @@ async def update_organization(org:OrgUpdate, db: AsyncDatabase = Depends(get_dat
         data=updated_org
     )
 
-@router.delete('/')
+@router.delete('/', dependencies=[Depends(require_admin)])
 async def delete_organization(orgId:str, db: AsyncDatabase = Depends(get_database)):
     result = await delete_organization_by_id(orgId, db)
     return StandardResponse(

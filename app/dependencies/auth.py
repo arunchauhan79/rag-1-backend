@@ -20,7 +20,6 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(bearer_
         
         
 def require_admin(user: dict = Depends(get_current_user)) -> dict:
-    print("user from require_admin", user.get("role"))
     if not user.get("role") == "admin" :  # or use `user.get("role") != "admin"`
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,

@@ -17,4 +17,8 @@ class DocOutput(DocBase):
     uploadedAt:datetime
     class Config:
         populate_by_name = True
+        
+class SearchBase(BaseModel):
+    searchTxt:str
+    orgId:str
     

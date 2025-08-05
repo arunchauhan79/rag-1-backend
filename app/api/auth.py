@@ -16,7 +16,6 @@ router = APIRouter()
 @router.post('/login')
 async def login(login:LoginRequest,response: Response, db:AsyncDatabase = Depends(get_database)):
     result =await authenticateUser(login, db)
-    print("login result",result)
     
     response.set_cookie(
         key="access_token",
