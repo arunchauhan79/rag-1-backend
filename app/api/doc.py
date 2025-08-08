@@ -1,41 +1,46 @@
-import os
-from fastapi import APIRouter,Depends, UploadFile, File, Query
-from dependencies import require_admin
-from schema import StandardResponse
-from pymongo.asynchronous.database import AsyncDatabase
-from db import get_database
-from core import BadRequestException
-from datetime import datetime
+from fastapi import APIRouter, Depends, status, UploadFile, File, Form
 from typing import List
+from schema import DocumentUploadResponse, StandardResponse, DocOutput
 from controllers import upload_files, getDocsByOrgId
+from core import BadRequestException
+from db import get_database
+from pymongo.asynchronous.database import AsyncDatabase
+from dependencies import require_admin
 
 router = APIRouter()
 
-
-
-
-
-@router.post('/',response_model=StandardResponse, summary="Upload a PDF file", dependencies=[Depends(require_admin)])
-async def upload_docs(
-    files:List[UploadFile] = File(...),
-    organizationId:str = Query(..., description="Organization ID"),
-    db:AsyncDatabase = Depends(get_database)
-    
+@router.post('/upload', response_model=DocumentUploadResponse, status_code=status.HTTP_201_CREATED, dependencies=[Depends(require_admin)])
+async def upload_documents(
+    files: List[UploadFile] = File(...),
+    organizationId: str = Form(...),
+    db: AsyncDatabase = Depends(get_database)
 ):
-    result = await upload_files(files, organizationId, db)
+    """
+    Upload PDF documents for an organization.
     
-    return StandardResponse(
-        status="success",
-        message="Files uploaded successfully",
-        data=result
-    )
-    
+    Args:
+        files: List of PDF files to upload
+        organizationId: Organization ID
+        db: Database connection
+        
+    Returns:
+        DocumentUploadResponse with upload and processing results
+    """
+    try:
+        result = await upload_files(files, organizationId, db)
+        return result
+    except Exception as e:
+        raise BadRequestException(f"Error uploading files: {e}")
 
-@router.get('/{orgId}', response_model=StandardResponse, dependencies=[Depends(require_admin)])
-async def get_org_by_id(orgId:str, db: AsyncDatabase = Depends(get_database)):
-    org = await getDocsByOrgId(orgId, db)
-    return StandardResponse(
-        status="success",
-        message="Documents retrieved successfully",
-        data=org
-    )
+@router.get('/documents/{orgId}', response_model=StandardResponse[List[DocOutput]], status_code=status.HTTP_200_OK, dependencies=[Depends(require_admin)])
+async def get_documents_by_org(orgId: str, db: AsyncDatabase = Depends(get_database)):
+    """Get all documents for an organization."""
+    try:
+        documents = await getDocsByOrgId(orgId, db)
+        return StandardResponse(
+            status="success",
+            message=f"Retrieved {len(documents)} documents",
+            data=documents
+        )
+    except Exception as e:
+        raise BadRequestException(f"Error retrieving documents: {e}")

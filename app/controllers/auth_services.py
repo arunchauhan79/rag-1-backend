@@ -14,7 +14,7 @@ async def authenticateUser(login: LoginRequest, db: AsyncDatabase) -> dict:
         user = await db.users.find_one({"username": login.username})
         if not user:
             raise UnauthorizedException("User not found")
-
+      
         if not verify_password(login.password, user["password"]):
             raise UnauthorizedException("Invalid password")
 

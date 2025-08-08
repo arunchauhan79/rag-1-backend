@@ -1,5 +1,5 @@
 from typing import List
-from schema import OrgOutput, OrgCreate, OrgModel, OrgUpdate, UserModel
+from schema import OrganizationOutput, OrganizationCreate, OrganizationModel, OrganizationUpdate, UserModel
 from .user_services import getUserById
 from datetime import datetime, timezone, timedelta
 from db.client import get_database
@@ -10,7 +10,7 @@ from bson import ObjectId
 from core import UserAlreadyExistsException, DatabaseConnectionException,DatabaseQueryException,NotFoundException,hash_password, logger, create_access_token
 
 
-async def createOrg(org_data: OrgCreate, db:AsyncDatabase) -> str:
+async def createOrg(org_data: OrganizationCreate, db:AsyncDatabase) -> str:
     try:
         if db is None:
             logger.info("Database not connected")
@@ -26,7 +26,7 @@ async def createOrg(org_data: OrgCreate, db:AsyncDatabase) -> str:
             raise UserAlreadyExistsException(f"Organization with email '{org_data.email}' already exists")
 
         # Build OrgModel and convert to dict
-        org_document = OrgModel(
+        org_document = OrganizationModel(
             name=org_data.name,
             username=org_data.username,
             email=org_data.email,
@@ -79,7 +79,7 @@ async def createOrg(org_data: OrgCreate, db:AsyncDatabase) -> str:
         raise DatabaseConnectionException(f"Internal server error")
 
 
-async def get_organization_by_id(org_id: str, db) -> OrgOutput:
+async def get_organization_by_id(org_id: str, db) -> OrganizationOutput:
     try:
         if db is None:
             raise DatabaseQueryException("Database not connected")
@@ -87,14 +87,14 @@ async def get_organization_by_id(org_id: str, db) -> OrgOutput:
         if not org:
             raise NotFoundException("Organization not found")
         org["_id"] = str(org["_id"])
-        return OrgOutput.model_validate(org, from_attributes=True)
+        return OrganizationOutput.model_validate(org, from_attributes=True)
 
     except Exception as e:
         logger.exception("Failed to fetch organization by ID")
         raise DatabaseQueryException(f"Failed to get organization details {e}")
 
 
-async def get_org_by_name(name: str, db:AsyncDatabase = Depends(get_database)) -> OrgOutput:
+async def get_org_by_name(name: str, db:AsyncDatabase = Depends(get_database)) -> OrganizationOutput:
     try:
         if db is None:
             raise DatabaseConnectionException("Database not connected")
@@ -103,26 +103,26 @@ async def get_org_by_name(name: str, db:AsyncDatabase = Depends(get_database)) -
         if not org:
             raise DatabaseQueryException("Organization not found")
 
-        return OrgOutput.model_validate({**org, "_id": str(org["_id"])})
+        return OrganizationOutput.model_validate({**org, "_id": str(org["_id"])})
     
     except Exception as e:
         logger.exception("Failed to fetch organization by name")
         raise DatabaseQueryException("Internal server error")
 
 
-async def getOrganizations(db:AsyncDatabase) -> List[OrgOutput]:
+async def getOrganizations(db:AsyncDatabase) -> List[OrganizationOutput]:
     try:
         cursor = db.organizations.find()
         orgs = []
         async for org in cursor:
-            orgs.append(OrgOutput.model_validate({**org, "_id": str(org["_id"])}))
+            orgs.append(OrganizationOutput.model_validate({**org, "_id": str(org["_id"])}))
         return orgs
     except Exception as e:
         logger.exception("Failed to fetch organizations")
         raise DatabaseQueryException("Internal server error")
 
 
-async def updateOrganization(org:OrgUpdate, db:AsyncDatabase) -> OrgOutput:
+async def updateOrganization(org:OrganizationUpdate, db:AsyncDatabase) -> OrganizationOutput:
     try:
         existing_org = await get_organization_by_id(org.id,db)
         if existing_org is not None:

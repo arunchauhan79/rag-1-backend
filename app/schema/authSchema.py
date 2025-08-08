@@ -8,5 +8,5 @@ class Token(BaseModel):
     
     
 class LoginRequest(BaseModel):
-    username: str
-    password: str    
+    username: Annotated[str,Field(...,description="Username of the user")]
+    password: Annotated[str, Field(..., description="password of the user")]    

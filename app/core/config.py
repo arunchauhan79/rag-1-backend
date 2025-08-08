@@ -8,8 +8,9 @@ class Settings(BaseSettings):
     mongodb_uri: str = Field(..., env="MONGODB_URI")
     jwt_secret: str = Field(..., env="JWT_SECRET")
     algorithm: Literal["HS256"] = "HS256"
-    token_expire_minutes: int = 1440
+    token_expire_minutes: int = 86400
     log_level:str ="INFO"  
+    DATABASE_NAME:str=Field(..., env="DATABASE_NAME")
     OPENAI_API_KEY:str=Field(..., env="OPENAI_API_KEY")
     PINECONE_API_KEY:str=Field(..., env="PINECONE_API_KEY")
     PINECONE_ENV:str=Field(..., env="PINECONE_ENV")

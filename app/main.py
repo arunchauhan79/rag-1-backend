@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, APIRouter
-from api import org_router,user_router, auth_router, doc_router
-from db import get_database, close_db_connection
+from api import org_router,user_router, auth_router, doc_router, query_router
+from db import get_database, close_db_connection, initialize_database
 from pymongo.asynchronous.database import AsyncDatabase
 from core import AppBaseException, app_base_exception_handler, DatabaseConnectionException
 from fastapi.middleware.cors import CORSMiddleware
@@ -28,36 +28,56 @@ app.add_middleware(
 )
 
 api_router = APIRouter(prefix="/api")
+
+
+
 @app.on_event("startup")
 async def startup_event():
     """
-    Automatically runs when FastAPI starts, even with Uvicorn.
+    Initialize database connection on application startup.
     """
     try:
-        db = get_database()
+        db = initialize_database()
         if db is not None:
             print(f"✅ Connected to database: {db.name}")
         else:
             raise DatabaseConnectionException(f"Failed to connect to the database.")
     except Exception as e:
-            raise DatabaseConnectionException(f"Startup error.")
-        
-    finally:
-        await close_db_connection()
+        print(f"❌ Startup error: {e}")
+        raise DatabaseConnectionException(f"Startup error: {e}")
+    
+    
+    
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    """
+    Close database connection on application shutdown.
+    """
+    await close_db_connection()
+    print("🔌 Application shutdown complete")
+    
+    
+    
 
 
 @app.get("/health")
 async def health_check(db:AsyncDatabase = Depends(get_database)):
     try:        
-        return {"status": "ok"}
-    except Exception:
-        raise DatabaseConnectionException(f"MongoDB is not reachable")
-    finally:
-        await close_db_connection()
+        # Simple ping to check if database is accessible
+        await db.command("ping")
+        return {"status": "ok", "database": "connected"}
+    except Exception as e:
+        raise DatabaseConnectionException(f"MongoDB is not reachable: {e}")
+    
+    
+    
 
 api_router.include_router(org_router, prefix='/organization' ,tags=["Organization"])
 api_router.include_router(user_router, prefix='/user' ,tags=["Users"])
 api_router.include_router(auth_router, prefix="/auth" ,tags=["Authentication"])
 api_router.include_router(doc_router, prefix="/doc", tags=["Docs"])
+api_router.include_router(query_router, prefix="/query", tags=["Query"])
+
 
 app.include_router(api_router)
