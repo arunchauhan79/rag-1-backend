@@ -9,9 +9,10 @@ PyObjectId = Annotated[str, BeforeValidator(str)]
 
 
 class QueryResponse(BaseModel):
+    query: Optional[str] = None
     answer: str
     context: Optional[str] = None
-    sources: Optional[List[str]] = None
+    document_ids: Optional[List[str]] = Field(default_factory=list, description="MongoDB document IDs used")
     confidence: Optional[float] = None
     
     class Config:

@@ -4,7 +4,8 @@ from .userSchema import UserCreate, UserUpdate, UserOutput, UserModel
 from .organizationSchema import OrganizationCreate, OrganizationUpdate, OrganizationOutput, OrganizationModel
 from .docSchema import (
     DocOutput, DocModel, DocumentUploadResponse, ProcessingResult, 
-    BulkUploadResponse, FileValidationResult, SearchBase
+    BulkUploadResponse, FileValidationResult, SearchBase,
+    DocumentDeletionResponse, DocumentDeletionErrors, DocumentDeletionRequest
 )
 from .querySchema import QueryResponse, ChatMessage, QueryRequest, ChatHistoryCreate,ChatHistoryResponse
 
@@ -39,6 +40,9 @@ __all__ = [
     "BulkUploadResponse", 
     "FileValidationResult",
     "SearchBase",
+    "DocumentDeletionResponse",
+    "DocumentDeletionErrors",
+    "DocumentDeletionRequest",
     
     # Query schemas
     "QueryResponse",

@@ -13,10 +13,10 @@ router = APIRouter()
 
 
 
-@router.post('/query',response_model=StandardResponse[QueryResponse],status_code=status.HTTP_200_OK, dependencies=[Depends(require_admin)])
+@router.post('/query',response_model=StandardResponse[QueryResponse],status_code=status.HTTP_200_OK)
 async def query(userSearch:SearchBase, db:AsyncDatabase = Depends(get_database)):
     try:        
-        print("query_doc")
+        print("documentId",userSearch.documentId)
         result = await query_doc(userSearch.searchTxt,userSearch.orgId, db)
         print("result....",result)
         return StandardResponse(         

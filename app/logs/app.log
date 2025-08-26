@@ -401,3 +401,433 @@ Processing: 6873cad3bec51c53475140a4_2025-07-23T09-09-12.128959_LLP_Agreement.pd
 2025-08-05 16:24:58,838 - INFO - app - Retrieved 45 documents for organization 6873cad3bec51c53475140a4
 2025-08-05 16:24:58,842 - INFO - app - Fetching documents for organization: 6873cad3bec51c53475140a4
 2025-08-05 16:24:58,885 - INFO - app - Retrieved 45 documents for organization 6873cad3bec51c53475140a4
+2025-08-05 16:32:51,930 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-05 16:32:56,539 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-05 16:34:38,120 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-05 16:34:42,425 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-05 16:35:17,663 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-05 16:35:23,584 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-05 16:35:51,985 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-05 16:35:55,736 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-05 16:36:19,700 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-05 16:36:26,868 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-05 16:36:51,494 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-05 16:36:57,588 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:03:08,175 - INFO - app - Organization inserted with id 6892db039f879b8b06e1c3a2
+2025-08-06 10:03:08,436 - INFO - app - Organization inserted as user in User collection with orgId 6892db039f879b8b06e1c3a2
+2025-08-06 10:03:18,354 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:03:18,604 - INFO - app - Retrieved 0 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:03:18,609 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:03:18,860 - INFO - app - Retrieved 0 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:03:19,652 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:03:19,903 - INFO - app - Retrieved 0 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:03:19,908 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:03:20,160 - INFO - app - Retrieved 0 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:12:37,615 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-06 10:12:43,945 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:13:05,071 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-06 10:13:09,554 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:18:00,201 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:18:00,470 - INFO - app - Retrieved 0 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:18:00,476 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:18:00,743 - INFO - app - Retrieved 0 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:19:03,733 - INFO - app - Starting upload of 1 files for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:19:03,745 - INFO - app - Prepared file for upload: genai-principles.pdf (3989241 bytes)
+2025-08-06 10:19:04,030 - INFO - app - Inserted 1 documents into database
+2025-08-06 10:19:04,030 - INFO - app - Starting PDF processing for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:19:05,062 - INFO - app - Loaded 12 document pages
+2025-08-06 10:19:05,069 - INFO - app - Created 32 chunks from documents
+2025-08-06 10:19:07,879 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-06 10:19:12,682 - INFO - app - Successfully processed 32 chunks for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:19:12,683 - INFO - app - PDF processing completed: status='success' message='Processed 32 chunks' chunks_processed=32 documents_loaded=12
+2025-08-06 10:19:12,700 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:19:12,968 - INFO - app - Retrieved 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:22:16,909 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:22:17,181 - INFO - app - Retrieved 0 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:22:17,189 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:22:17,455 - INFO - app - Retrieved 0 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:22:31,367 - INFO - app - Starting upload of 1 files for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:22:31,378 - INFO - app - Prepared file for upload: genai-principles.pdf (3989241 bytes)
+2025-08-06 10:22:31,668 - INFO - app - Inserted 1 documents into database
+2025-08-06 10:22:31,668 - INFO - app - Starting PDF processing for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:22:32,216 - INFO - app - Loaded 12 document pages
+2025-08-06 10:22:32,220 - INFO - app - Created 32 chunks from documents
+2025-08-06 10:22:38,154 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-06 10:22:42,384 - INFO - app - Successfully processed 32 chunks for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:22:42,385 - INFO - app - PDF processing completed: status='success' message='Processed 32 chunks' chunks_processed=32 documents_loaded=12
+2025-08-06 10:23:12,964 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:23:13,230 - INFO - app - Retrieved 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:23:13,237 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-06 10:23:13,502 - INFO - app - Retrieved 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-06 10:24:19,341 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-06 10:24:23,706 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 12:55:20,510 - INFO - app - Organization inserted with id 6895a660ab8cae6fc24848cd
+2025-08-08 12:55:20,934 - INFO - app - Organization inserted as user in User collection with orgId 6895a660ab8cae6fc24848cd
+2025-08-08 13:05:54,039 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 13:06:00,781 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 13:18:16,698 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 13:18:21,872 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 13:50:26,788 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 13:50:30,981 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:21:05,509 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-08 15:21:05,800 - ERROR - app - Error fetching documents for organization 6892db039f879b8b06e1c3a2: 1 validation error for DocOutput
+_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('6892df8f9f879b8b06e1c3a5'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-08 15:23:17,276 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-08 15:23:17,552 - ERROR - app - Error fetching documents for organization 6892db039f879b8b06e1c3a2: 1 validation error for DocOutput
+_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('6892df8f9f879b8b06e1c3a5'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-08 15:23:17,561 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-08 15:23:17,837 - ERROR - app - Error fetching documents for organization 6892db039f879b8b06e1c3a2: 1 validation error for DocOutput
+_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('6892df8f9f879b8b06e1c3a5'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-08 15:25:37,646 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-08 15:25:40,734 - INFO - app - Found 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-08 15:25:48,021 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-08 15:25:48,316 - INFO - app - Found 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-08 15:25:48,321 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-08 15:25:48,598 - INFO - app - Found 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-08 15:29:02,726 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:29:09,645 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:29:35,264 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:29:39,886 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:29:51,889 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:29:56,751 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:31:54,418 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:31:59,402 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:32:55,109 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:32:59,735 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:33:04,240 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:33:08,198 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:33:47,237 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:33:50,978 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:36:44,690 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:36:50,300 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:37:14,517 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:37:19,168 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:41:25,579 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:41:30,091 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:41:52,776 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:41:57,035 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:49:05,053 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:49:09,951 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:56:09,017 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:56:16,504 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 15:56:28,234 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 15:56:35,447 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 16:27:30,769 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 16:27:36,738 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 16:27:54,531 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 16:28:00,493 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 16:28:10,688 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 16:28:20,578 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-08 16:28:48,372 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-08 16:28:52,883 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 12:05:16,550 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:05:16,659 - INFO - app - Found 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:05:16,663 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:05:16,748 - INFO - app - Found 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:05:29,180 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 12:05:35,631 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 12:05:49,729 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 12:05:54,574 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 12:06:12,362 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:06:12,493 - INFO - app - Found 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:06:12,497 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:06:12,595 - INFO - app - Found 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:06:40,034 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:06:40,141 - INFO - app - Found 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:06:40,145 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:06:40,217 - INFO - app - Found 1 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:16:17,250 - INFO - app - Starting upload of 1 files for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:16:17,255 - INFO - app - Prepared file for upload: LeavePolicy.pdf (409134 bytes)
+2025-08-10 12:16:20,035 - INFO - app - Inserted 1 documents into database
+2025-08-10 12:16:20,036 - INFO - app - Starting PDF processing for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:16:20,713 - INFO - app - Loaded 11 document pages
+2025-08-10 12:16:20,716 - INFO - app - Created 25 chunks from documents
+2025-08-10 12:16:24,553 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 12:16:29,818 - INFO - app - Successfully processed 25 chunks for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:16:29,819 - ERROR - app - Error processing PDFs: 'ProcessPDFResponse' object has no attribute 'get'
+2025-08-10 12:16:29,819 - INFO - app - Upload completed: 1 files uploaded, 0 errors
+2025-08-10 12:16:31,430 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:16:31,487 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:16:31,491 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:16:31,548 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:16:59,948 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 12:17:06,218 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 12:17:50,093 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 12:17:54,449 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 12:18:19,418 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 12:18:27,392 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 12:19:06,153 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 12:19:12,428 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 12:27:47,879 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:27:47,960 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 12:27:47,964 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 12:27:48,082 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 13:23:18,086 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:23:21,916 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:24:13,595 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:24:22,333 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:24:39,260 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:24:48,756 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:33:16,354 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:33:22,641 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:33:45,842 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:33:50,324 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:42:12,543 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:42:19,862 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:42:51,133 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:43:04,095 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:43:35,817 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:43:43,147 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:43:55,070 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:44:00,228 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:44:12,916 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:44:17,927 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:44:32,116 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 13:44:37,727 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 13:47:19,802 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 13:47:20,475 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 13:47:20,480 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 13:47:21,543 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 13:47:27,797 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 13:47:28,514 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 13:47:29,810 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 13:47:29,877 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 13:48:16,486 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 13:48:16,598 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 13:48:16,603 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 13:48:16,659 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 18:55:04,064 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 18:55:04,455 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 18:55:04,475 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 18:55:04,535 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 18:58:00,148 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 18:58:00,209 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 18:58:00,214 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 18:58:00,316 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:00:20,786 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:00:20,873 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:00:26,238 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:00:26,393 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:00:27,192 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:00:27,322 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:00:27,813 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:00:27,953 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:07:37,375 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:07:38,695 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:07:38,709 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:07:39,930 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:17:17,937 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:17:18,405 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:24:15,184 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:24:15,964 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:24:16,415 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:24:16,423 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:24:16,455 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:24:17,407 - INFO - app - Found 2 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:24:35,029 - INFO - app - Starting upload of 1 files for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:24:35,043 - INFO - app - Prepared file for upload: aruncv.pdf (531988 bytes)
+2025-08-10 19:24:35,083 - INFO - app - Inserted 1 documents into database
+2025-08-10 19:24:35,083 - INFO - app - Starting PDF processing for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:24:35,554 - INFO - app - Loaded 3 document pages
+2025-08-10 19:24:35,557 - INFO - app - Created 6 chunks from documents
+2025-08-10 19:24:39,716 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 19:24:42,616 - INFO - app - Successfully processed 6 chunks for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:24:42,617 - ERROR - app - Error processing PDFs: 'ProcessPDFResponse' object has no attribute 'get'
+2025-08-10 19:24:42,618 - INFO - app - Upload completed: 1 files uploaded, 0 errors
+2025-08-10 19:28:02,077 - INFO - app - Starting upload of 1 files for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:28:02,083 - INFO - app - Prepared file for upload: virat.pdf (45050 bytes)
+2025-08-10 19:28:02,131 - INFO - app - Inserted 1 documents into database
+2025-08-10 19:28:02,132 - INFO - app - Starting PDF processing for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:28:02,149 - INFO - app - Loaded 1 document pages
+2025-08-10 19:28:02,150 - INFO - app - Created 1 chunks from documents
+2025-08-10 19:28:04,270 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 19:28:05,937 - INFO - app - Successfully processed 1 chunks for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:28:05,937 - ERROR - app - Error processing PDFs: 'ProcessPDFResponse' object has no attribute 'get'
+2025-08-10 19:28:05,937 - INFO - app - Upload completed: 1 files uploaded, 0 errors
+2025-08-10 19:31:35,280 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:31:36,470 - INFO - app - Found 4 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:31:36,476 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:31:36,508 - INFO - app - Found 4 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:34:05,197 - INFO - app - Starting upload of 1 files for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:34:05,204 - INFO - app - Prepared file for upload: Driver Salary Receipt - June-2025.pdf (58940 bytes)
+2025-08-10 19:34:06,456 - INFO - app - Inserted 1 documents into database
+2025-08-10 19:34:06,457 - INFO - app - Starting PDF processing for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:34:06,758 - INFO - app - Loaded 1 document pages
+2025-08-10 19:34:06,760 - INFO - app - Created 1 chunks from documents
+2025-08-10 19:34:11,510 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 19:34:14,003 - INFO - app - Successfully processed 1 chunks for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:34:14,005 - ERROR - app - Error processing PDFs: 'ProcessPDFResponse' object has no attribute 'get'
+2025-08-10 19:34:14,006 - INFO - app - Upload completed: 1 files uploaded, 0 errors
+2025-08-10 19:34:19,463 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:34:19,517 - INFO - app - Found 5 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:34:19,524 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:34:19,576 - INFO - app - Found 5 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:10,219 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:10,278 - INFO - app - Found 5 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:10,287 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:10,341 - INFO - app - Found 5 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:10,345 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:10,399 - INFO - app - Found 5 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:10,408 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:10,464 - INFO - app - Found 5 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:15,645 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:15,703 - INFO - app - Found 5 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:15,708 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:15,763 - INFO - app - Found 5 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:38,025 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:36:38,079 - INFO - app - Found 5 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:38:07,294 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 19:38:14,173 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 19:41:18,570 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-10 19:41:18,624 - INFO - app - Found 5 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-10 19:44:27,463 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-10 19:44:34,000 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-11 12:28:34,981 - INFO - app - Starting upload of 1 files for organization 6892db039f879b8b06e1c3a2
+2025-08-11 12:28:34,986 - INFO - app - Prepared file for upload: LLP_Agreement.pdf (319985 bytes)
+2025-08-11 12:28:35,076 - INFO - app - Inserted 1 documents into database
+2025-08-11 12:28:35,076 - INFO - app - Starting PDF processing for organization: 6892db039f879b8b06e1c3a2
+2025-08-11 12:28:35,767 - INFO - app - Loaded 7 document pages
+2025-08-11 12:28:35,772 - INFO - app - Created 21 chunks from documents
+2025-08-11 12:28:39,922 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-11 12:28:50,458 - INFO - app - Successfully processed 21 chunks for organization 6892db039f879b8b06e1c3a2
+2025-08-11 12:28:50,459 - ERROR - app - Error processing PDFs: 'ProcessPDFResponse' object has no attribute 'get'
+2025-08-11 12:28:50,460 - INFO - app - Upload completed: 1 files uploaded, 0 errors
+2025-08-11 12:59:19,815 - INFO - app - Starting upload of 1 files for organization 6892db039f879b8b06e1c3a2
+2025-08-11 12:59:19,820 - INFO - app - Prepared file for upload: Sompo.pdf (290205 bytes)
+2025-08-11 12:59:19,886 - INFO - app - Inserted 1 documents into database
+2025-08-11 12:59:19,886 - INFO - app - Created document mappings: {'6892db039f879b8b06e1c3a2_20250811_072919_816_Sompo.pdf': '68999bcff5927250e2b9d1e2'}
+2025-08-11 12:59:19,887 - INFO - app - Starting PDF processing for organization: 6892db039f879b8b06e1c3a2
+2025-08-11 12:59:19,888 - INFO - app - Processing with document mappings: {'6892db039f879b8b06e1c3a2_20250811_072919_816_Sompo.pdf': '68999bcff5927250e2b9d1e2'}
+2025-08-11 12:59:21,285 - INFO - app - Added document ID 68999bcff5927250e2b9d1e2 to 6892db039f879b8b06e1c3a2_20250811_072919_816_Sompo.pdf
+2025-08-11 12:59:21,286 - INFO - app - Added document ID 68999bcff5927250e2b9d1e2 to 6892db039f879b8b06e1c3a2_20250811_072919_816_Sompo.pdf
+2025-08-11 12:59:21,286 - INFO - app - Added document ID 68999bcff5927250e2b9d1e2 to 6892db039f879b8b06e1c3a2_20250811_072919_816_Sompo.pdf
+2025-08-11 12:59:21,286 - INFO - app - Added document ID 68999bcff5927250e2b9d1e2 to 6892db039f879b8b06e1c3a2_20250811_072919_816_Sompo.pdf
+2025-08-11 12:59:21,286 - INFO - app - Added document ID 68999bcff5927250e2b9d1e2 to 6892db039f879b8b06e1c3a2_20250811_072919_816_Sompo.pdf
+2025-08-11 12:59:21,287 - INFO - app - Loaded 5 document pages
+2025-08-11 12:59:21,291 - INFO - app - Created 70 chunks from documents
+2025-08-11 12:59:21,292 - INFO - app - Sample chunk metadata after splitting: {'producer': 'Select.Pdf Html To Pdf for .NET Community Edition v22.1.0', 'creator': 'PyPDF', 'creationdate': '', 'source': 'C:\\WorkStation\\Practice\\Python\\chatbot_with_python\\python-backend\\app\\uploaded_files\\6892db039f879b8b06e1c3a2_20250811_072919_816_Sompo.pdf', 'total_pages': 5, 'page': 0, 'page_label': '1', 'documentId': '68999bcff5927250e2b9d1e2'}
+2025-08-11 12:59:23,526 - INFO - app - Sample chunk metadata before storing: {'producer': 'Select.Pdf Html To Pdf for .NET Community Edition v22.1.0', 'creator': 'PyPDF', 'creationdate': '', 'source': 'C:\\WorkStation\\Practice\\Python\\chatbot_with_python\\python-backend\\app\\uploaded_files\\6892db039f879b8b06e1c3a2_20250811_072919_816_Sompo.pdf', 'total_pages': 5, 'page': 0, 'page_label': '1', 'documentId': '68999bcff5927250e2b9d1e2', 'orgId': '6892db039f879b8b06e1c3a2'}
+2025-08-11 12:59:24,962 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-11 12:59:43,016 - INFO - app - Successfully processed 70 chunks for organization 6892db039f879b8b06e1c3a2
+2025-08-11 12:59:43,017 - INFO - app - PDF processing completed for organization 6892db039f879b8b06e1c3a2
+2025-08-11 12:59:43,018 - INFO - app - Upload completed: 1 files uploaded, 0 errors
+2025-08-12 11:35:04,827 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 11:35:05,106 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 11:35:05,112 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 11:35:05,391 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 11:45:35,593 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 11:45:35,904 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 11:46:15,269 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 11:46:15,579 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 11:57:36,633 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 11:57:36,905 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 11:57:36,911 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 11:57:37,180 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 12:15:49,484 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 12:15:49,761 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 12:15:49,765 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 12:15:50,041 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 12:41:07,486 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 12:41:07,753 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 12:41:07,758 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 12:41:08,043 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 12:46:02,588 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 12:46:02,849 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 13:52:53,184 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 13:52:56,619 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 13:52:56,635 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 13:52:56,899 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 14:54:51,308 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 14:54:51,634 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 14:54:51,644 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 14:54:51,960 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 14:56:50,332 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 14:56:53,873 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 14:56:53,883 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 14:56:54,181 - INFO - app - Found 7 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 14:57:01,862 - INFO - app - documentIds to delete {documentIds}
+2025-08-12 14:57:01,862 - INFO - app - Starting deletion of 1 documents
+2025-08-12 14:57:02,183 - INFO - app - Found 1 documents to delete
+2025-08-12 14:57:02,183 - WARNING - app - File not found or no path specified: uploaded_files\6892db039f879b8b06e1c3a2_20250811_072919_816_Sompo.pdf
+2025-08-12 14:57:08,845 - INFO - app - Deleted embeddings for document ID: 68999bcff5927250e2b9d1e2
+2025-08-12 14:57:09,151 - INFO - app - Deleted 1 documents from MongoDB
+2025-08-12 14:57:09,151 - INFO - app - Document deletion completed: {'success': True, 'documents_requested': 1, 'documents_found': 1, 'documents_deleted_from_mongodb': 1, 'physical_files_deleted': 0, 'embeddings_deleted': 1, 'deleted_document_ids': ['68999bcff5927250e2b9d1e2'], 'deleted_file_paths': [], 'errors': {'invalid_ids': [], 'file_deletion_errors': [], 'vectorstore_deletion_errors': []}}
+2025-08-12 14:57:28,302 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 14:57:28,615 - INFO - app - Found 6 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-12 14:57:28,623 - INFO - app - Fetching documents for organization: 6892db039f879b8b06e1c3a2
+2025-08-12 14:57:28,939 - INFO - app - Found 6 documents for organization 6892db039f879b8b06e1c3a2
+2025-08-26 14:11:33,109 - INFO - app - Organization is already exists
+2025-08-26 14:11:33,111 - INFO - app - Unexpected error while creating organization
+2025-08-26 14:12:01,170 - INFO - app - Organization is already exists
+2025-08-26 14:12:01,170 - INFO - app - Unexpected error while creating organization
+2025-08-26 14:13:18,068 - INFO - app - Organization is already exists
+2025-08-26 14:13:18,069 - INFO - app - Unexpected error while creating organization
+2025-08-26 14:13:30,059 - INFO - app - Organization inserted with id 68ad73b191361573ebe353e6
+2025-08-26 14:13:30,454 - INFO - app - Organization inserted as user in User collection with orgId 68ad73b191361573ebe353e6
+2025-08-26 14:19:07,984 - INFO - app - Organization inserted with id 68ad750391361573ebe353e8
+2025-08-26 14:19:08,491 - INFO - app - Organization inserted as user in User collection with orgId 68ad750391361573ebe353e8
+2025-08-26 14:19:19,045 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:19:19,102 - INFO - app - Found 0 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:19:19,109 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:19:19,169 - INFO - app - Found 0 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:19:52,524 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:19:52,581 - INFO - app - Found 0 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:19:52,587 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:19:52,655 - INFO - app - Found 0 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:20:13,433 - INFO - app - Starting upload of 1 files for organization 68ad750391361573ebe353e8
+2025-08-26 14:20:13,444 - INFO - app - Prepared file for upload: virat.pdf (45050 bytes)
+2025-08-26 14:20:13,517 - INFO - app - Inserted 1 documents into database
+2025-08-26 14:20:13,517 - INFO - app - Created document mappings: {'68ad750391361573ebe353e8_20250826_085013_434_virat.pdf': '68ad754591361573ebe353eb'}
+2025-08-26 14:20:13,518 - INFO - app - Starting PDF processing for organization: 68ad750391361573ebe353e8
+2025-08-26 14:20:13,520 - INFO - app - Processing with document mappings: {'68ad750391361573ebe353e8_20250826_085013_434_virat.pdf': '68ad754591361573ebe353eb'}
+2025-08-26 14:20:13,936 - INFO - app - Added document ID 68ad754591361573ebe353eb to 68ad750391361573ebe353e8_20250826_085013_434_virat.pdf
+2025-08-26 14:20:13,936 - INFO - app - Loaded 1 document pages
+2025-08-26 14:20:13,939 - INFO - app - Created 1 chunks from documents
+2025-08-26 14:20:13,939 - INFO - app - Sample chunk metadata after splitting: {'documentId': '68ad754591361573ebe353eb'}
+2025-08-26 14:20:17,540 - INFO - app - Sample chunk metadata before storing (cleaned): {'orgId': '68ad750391361573ebe353e8', 'documentId': '68ad754591361573ebe353eb'}
+2025-08-26 14:20:19,283 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-26 14:20:21,333 - INFO - app - Successfully processed 1 chunks for organization 68ad750391361573ebe353e8
+2025-08-26 14:20:21,334 - INFO - app - PDF processing completed for organization 68ad750391361573ebe353e8
+2025-08-26 14:20:21,335 - INFO - app - Upload completed: 1 files uploaded, 0 errors
+2025-08-26 14:20:25,863 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:20:25,937 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:20:25,942 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:20:25,999 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:22:47,636 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:22:50,064 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:22:50,076 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:22:50,127 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:24:01,129 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:24:02,188 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:24:02,198 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:24:02,239 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:34:13,502 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:34:14,927 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:34:14,936 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:34:14,973 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:35:16,551 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:35:16,614 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:35:16,619 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:35:16,674 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:36:10,547 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:36:10,584 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:36:10,589 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:36:10,624 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:38:05,171 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:38:05,221 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:38:05,225 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:38:05,265 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:38:07,563 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:38:07,606 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:38:07,609 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:38:07,663 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8
+2025-08-26 14:43:26,901 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-26 14:43:32,172 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-26 14:44:18,782 - INFO - app - Fetching documents for organization: 68ad750391361573ebe353e8
+2025-08-26 14:44:18,827 - INFO - app - Found 1 documents for organization 68ad750391361573ebe353e8

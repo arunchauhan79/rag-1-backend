@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from utils import get_vectorstore
 from core import logger, BadRequestException
 from langchain.schema import Document
@@ -14,14 +14,49 @@ def _get_pdf_folder() -> Path:
     return base_dir / "uploaded_files"
 
 
-def _load_pdf_documents(pdf_folder: Path) -> List[Document]:
-    """Load all PDF documents from the specified folder."""
+def _load_pdf_documents_with_metadata(pdf_folder: Path, document_mappings: Dict[str, str]) -> List[Document]:
+    """Load all PDF documents from the specified folder and add only document IDs to metadata."""
     loader = DirectoryLoader(
         path=str(pdf_folder),
         glob='*.pdf',
         loader_cls=PyPDFLoader
     )
-    return loader.load()
+    docs = loader.load()
+    
+    # Clean metadata and add only document IDs based on filename mapping
+    for doc in docs:
+        # Extract the unique filename from the document source
+        source_path = doc.metadata.get('source', '') if doc.metadata else ''
+        filename = os.path.basename(source_path)
+        
+        # Clear all existing metadata
+        doc.metadata = {}
+        
+        # Find the corresponding document ID and add only that
+        document_id = document_mappings.get(filename)
+        if document_id:
+            doc.metadata['documentId'] = document_id
+            logger.info(f"Added document ID {document_id} to {filename}")
+        else:
+            logger.warning(f"No document ID found for {filename}")
+    
+    return docs
+
+
+def _load_pdf_documents(pdf_folder: Path) -> List[Document]:
+    """Load all PDF documents from the specified folder and clean metadata."""
+    loader = DirectoryLoader(
+        path=str(pdf_folder),
+        glob='*.pdf',
+        loader_cls=PyPDFLoader
+    )
+    docs = loader.load()
+    
+    # Clean all metadata from documents
+    for doc in docs:
+        doc.metadata = {}
+    
+    return docs
 
 
 def _cleanup_processed_files(pdf_folder: Path) -> None:
@@ -43,24 +78,44 @@ def _create_text_splitter() -> RecursiveCharacterTextSplitter:
 
 
 def _add_organization_metadata(chunks: List[Document], org_id: str) -> List[Document]:
-    """Add organization ID to chunk metadata."""
+    """Clean all metadata and add only orgId and documentId."""
     for chunk in chunks:
-        chunk.metadata = {'orgId' : org_id}
+        # Store documentId if it exists before cleaning
+        document_id = None
+        if hasattr(chunk, 'metadata') and chunk.metadata:
+            document_id = chunk.metadata.get('documentId')
+        
+        # Clear all metadata and set only required fields
+        chunk.metadata = {'orgId': org_id}
+        
+        # Add documentId if it was present
+        if document_id:
+            chunk.metadata['documentId'] = document_id
+        
+        # Log the cleaned metadata
+        logger.debug(f"Cleaned chunk metadata: {chunk.metadata}")
+    
     return chunks
 
 
 def _store_chunks_in_vectorstore(chunks: List[Document]) -> None:
     """Store document chunks in the vector database."""
     vectorstore = get_vectorstore()
+    
+    # Log sample metadata before storing (should only contain orgId and documentId)
+    if chunks:
+        logger.info(f"Sample chunk metadata before storing (cleaned): {chunks[0].metadata}")
+    
     vectorstore.add_documents(chunks)
 
 
-def process_all_pdfs(org_id: str) -> Dict[str, Any]:
+def process_all_pdfs(org_id: str, document_mappings: Optional[Dict[str, str]] = None) -> Dict[str, Any]:
     """
-    Process all PDF files for the given organization.
+    Process all PDF files for the given organization with document ID mapping.
     
     Args:
         org_id: Organization identifier
+        document_mappings: Optional mapping of filename to document ID
         
     Returns:
         Dict containing processing results
@@ -71,13 +126,25 @@ def process_all_pdfs(org_id: str) -> Dict[str, Any]:
     try:
         logger.info(f"Starting PDF processing for organization: {org_id}")
         
-        # Step 1: Get PDF folder and load documents
+        # Step 1: Get PDF folder and load documents with metadata
         pdf_folder = _get_pdf_folder()
-        docs = _load_pdf_documents(pdf_folder)
+        
+        if document_mappings:
+            logger.info(f"Processing with document mappings: {document_mappings}")
+            docs = _load_pdf_documents_with_metadata(pdf_folder, document_mappings)
+        else:
+            # Fallback to original method without document IDs
+            logger.warning("Processing without document mappings - document IDs will not be included")
+            docs = _load_pdf_documents(pdf_folder)
         
         if not docs:
             logger.info("No PDF documents found to process")
-            return {"status": "success", "message": "No documents to process", "chunks_processed": 0}
+            return {
+                "status": "success", 
+                "message": "No documents to process", 
+                "chunks_processed": 0,
+                "documents_loaded": 0
+            }
         
         logger.info(f"Loaded {len(docs)} document pages")
         
@@ -90,7 +157,11 @@ def process_all_pdfs(org_id: str) -> Dict[str, Any]:
         
         logger.info(f"Created {len(all_chunks)} chunks from documents")
         
-        # Step 4: Add organization metadata
+        # Log sample chunk metadata after splitting
+        if all_chunks:
+            logger.info(f"Sample chunk metadata after splitting: {all_chunks[0].metadata}")
+        
+        # Step 4: Add organization metadata (preserves existing metadata including documentId)
         chunks_with_metadata = _add_organization_metadata(all_chunks, org_id)
         
         # Step 5: Store in vector database
@@ -98,12 +169,12 @@ def process_all_pdfs(org_id: str) -> Dict[str, Any]:
         
         logger.info(f"Successfully processed {len(chunks_with_metadata)} chunks for organization {org_id}")
         
-        return ProcessPDFResponse(
-            status = "success",
-            message= f"Processed {len(chunks_with_metadata)} chunks",
-            chunks_processed= len(chunks_with_metadata),
-            documents_loaded = len(docs)
-        )
+        return {
+            "status": "success",
+            "message": f"Processed {len(chunks_with_metadata)} chunks",
+            "chunks_processed": len(chunks_with_metadata),
+            "documents_loaded": len(docs)
+        }
         
     except Exception as e:
         logger.error(f"Error processing PDFs for organization {org_id}: {str(e)}")

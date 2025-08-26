@@ -1,6 +1,6 @@
 
 from typing import List
-from schema import ChatHistoryCreate,ChatHistoryResponse, ChatMessage ,QueryResponse 
+from schema import ChatHistoryCreate,ChatHistoryResponse, ChatMessage ,QueryResponse, SearchBase 
 from fastapi import HTTPException
 from db import get_database
 from core import DatabaseConnectionException, BadRequestException, settings
@@ -17,84 +17,81 @@ from langchain.schema import HumanMessage, AIMessage, BaseMessage
 
 
 
-async def query_doc(search:str, orgId:str, db:AsyncDatabase):
+async def query_doc(search_text: str, org_id: str, db: AsyncDatabase):
+    """
+    Query documents using RAG pipeline with organization filtering.
+    
+    Args:
+        search_text: The user's search query
+        org_id: Organization ID for filtering
+        db: Database connection
+        
+    Returns:
+        QueryResponse containing the response and metadata
+    """
     try:
-        print("query_doc")
-        session_id = "sess_123"
-        filter_dict = {}
-      # Step 1: Get similar documents
+        print(f"Processing query: '{search_text}' for organization: {org_id}")
+        
+        # Get vectorstore and create retriever with org filter
         vector_store = get_vectorstore()
-        # results = vector_store.similarity_search(query=search, filter={"orgId": orgId})
-        if orgId:
-            # Search in organization
-            filter_dict = {"orgId": orgId}
-            
-            
-        if filter_dict:    
-            retriever = vector_store.as_retriever(
-                search_kwargs={
-                    "k": 2,
-                    "filter": filter_dict
-                }
+        retriever = vector_store.as_retriever(
+            search_kwargs={
+                "k": 5,
+                "filter": {"orgId": org_id}  # Filter by organization
+            }
+        )
+        
+        # Retrieve relevant documents
+        docs = retriever.invoke(search_text)
+        
+        if not docs:
+            print(f"No documents found for query: '{search_text}' in organization: {org_id}")
+            return QueryResponse(
+                query=search_text,
+                answer="I couldn't find any relevant information in your documents for this query.",
+                document_ids=[],
+                confidence=0.0
             )
-        else:
-            retriever = vector_store.as_retriever(
-                search_kwargs={
-                    "k": 2,                   
-                }
-            )
+        
+        # Prepare context from retrieved documents and collect document IDs
+        context_parts = []
+        document_ids = []
+        
+        for doc in docs:
+            context_parts.append(doc.page_content)
             
-        results = retriever.invoke(search)   
-        context = "\n\n".join([doc.page_content for doc in results])
-        #chat_history = await get_chat_history(session_id)
-       
-        # Step 3: Build prompt with chat history
+            # Extract only document ID from metadata (sources removed)
+            doc_id = doc.metadata.get('documentId')
+            if doc_id and doc_id not in document_ids:
+                document_ids.append(doc_id)
+                
+            print(f"Retrieved chunk metadata: {doc.metadata}")
+        
+        context = "\n\n".join(context_parts)
+        
+        # Step 3: Build prompt with context
         chat_template = ChatPromptTemplate.from_messages([
             ('system', 'You are a helpful assistant.'),
-           # MessagesPlaceholder(variable_name='chat_history'),
-            ('human', 'Given the following context, please answer the question from given context only. If context is insufficient then say i do not know \n\nContext:\n{context}\n\nQuestion: {question}')
+            ('human', 'Given the following context, please answer the question from given context only. If context is insufficient then say I do not know \n\nContext:\n{context}\n\nQuestion: {question}')
         ])
+        
         prompt = chat_template.invoke({
-            'question': search,
+            'question': search_text,
             'context': context,
-            #'chat_history': chat_history
         })
 
         # Step 4: Invoke the model
-        llm = ChatOpenAI(model_name="o4-mini", api_key=settings.OPENAI_API_KEY)
+        llm = ChatOpenAI(model_name="gpt-4o-mini", api_key=settings.OPENAI_API_KEY)
         response = llm.invoke(prompt)
 
-        # Step 5: Append to chat_history
-        # chat_history.append(HumanMessage(content=search))
-        # chat_history.append(AIMessage(content=response.content))
-
-        # # Step 6: Save chat history to DB
-        # doc_to_save = ChatHistoryCreate(
-        #     sessionId="sess_123",
-        #     userId="user_001",
-        #     orgId="org_001",
-        #     messages=[
-        #         ChatMessage(
-        #             role="user",
-        #             message=search,
-        #             timestamp=datetime.now(timezone.utc)
-        #         ),
-        #         ChatMessage(
-        #             role="ai",
-        #             message=response.content,
-        #             timestamp=datetime.now(timezone.utc)
-        #         )
-        #     ],
-        #     isActive=True
-        # )
-
-        # save_chat_response = await save_chat_history(doc_to_save)
-
-        # Step 7: Return response
-        print("llm response",response.content)
+        print(f"Generated response for query: '{search_text}' using {len(document_ids)} documents")
+        print("LLM response:", response.content)
+        
         return QueryResponse(
-            query = search,
-            answer = response.content
+            query=search_text,
+            answer=response.content,
+            document_ids=document_ids,  # Include document IDs in response
+            confidence=min(len(docs) * 0.2, 1.0)  # Simple confidence scoring
         )
         
     except Exception as e:

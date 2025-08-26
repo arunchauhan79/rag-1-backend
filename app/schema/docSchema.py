@@ -79,9 +79,37 @@ class FileValidationResult(BaseModel):
 class SearchBase(BaseModel):
     searchTxt: str = Field(..., min_length=1, description="Search query text")
     orgId: str = Field(..., min_length=1, description="Organization ID")
+    documentId: str = Field(..., min_length=1, description="Document ID")
     limit: Optional[int] = Field(default=5, ge=1, le=20, description="Number of results")
     
     model_config = ConfigDict(
         str_strip_whitespace=True,
         arbitrary_types_allowed=True
     )
+
+# Document deletion request schema
+class DocumentDeletionRequest(BaseModel):
+    documentIds: List[str] = Field(..., min_items=1, description="List of document IDs to delete")
+    
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+
+# Document deletion response schema
+class DocumentDeletionErrors(BaseModel):
+    invalid_ids: List[str] = Field(default_factory=list, description="Invalid document IDs")
+    file_deletion_errors: List[str] = Field(default_factory=list, description="File deletion errors")
+    vectorstore_deletion_errors: List[str] = Field(default_factory=list, description="Vectorstore deletion errors")
+    
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+
+class DocumentDeletionResponse(BaseModel):
+    success: bool = Field(..., description="Whether the deletion was successful")
+    documents_requested: int = Field(..., description="Number of documents requested for deletion")
+    documents_found: int = Field(..., description="Number of documents found in database")
+    documents_deleted_from_mongodb: int = Field(..., description="Number of documents deleted from MongoDB")
+    physical_files_deleted: int = Field(..., description="Number of physical files deleted")
+    embeddings_deleted: int = Field(..., description="Number of embedding vectors deleted")
+    deleted_document_ids: List[str] = Field(default_factory=list, description="IDs of deleted documents")
+    deleted_file_paths: List[str] = Field(default_factory=list, description="Paths of deleted files")
+    errors: DocumentDeletionErrors = Field(default_factory=DocumentDeletionErrors, description="Any errors encountered")
+    
+    model_config = ConfigDict(arbitrary_types_allowed=True)
